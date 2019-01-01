@@ -35,7 +35,8 @@ export default Controller.extend({
     const toast = this.get('toast');
     const options = {
       positionClass: 'toast-bottom-left',
-      progressBar: false
+      progressBar: false,
+      closeButton: false
     };
 
     toast.info(`Detail: ${detail}`, `Event: ${type}`, options);
