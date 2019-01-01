@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
 import '@kuscamara/sample-lit-element'
 
 export default Controller.extend({
@@ -25,5 +26,18 @@ export default Controller.extend({
 
   avatar: computed('avatarSrc', 'avatarSize', function() {
     return `${this.avatarSrc}${this.avatarSize}/random-0.png`;
-  })
+  }),
+
+  toast: service('toast'),
+
+  logSomething(event) {
+    const { type, detail } = event;
+    const toast = this.get('toast');
+    const options = {
+      positionClass: 'toast-bottom-left',
+      progressBar: false
+    };
+
+    toast.info(`Detail: ${detail}`, `Event: ${type}`, options);
+  }
 });

@@ -20,6 +20,12 @@ input[disabled] {
   margin: auto;
 }
 
+.heading > span {
+  font-weight: 300;
+  font-style: italic;
+  color: #919191;
+}
+
 .contact-card {
   width: 300px;
 }
@@ -69,4 +75,40 @@ input[disabled] {
 
 .label code {
   color: #929292;
+}
+
+/**
+ * customized toastr
+ */
+#toast-container > .toast-info {
+  font-size: 13px;
+  background-image: none !important;
+}
+
+#toast-container > .toast-info > div {
+  line-height: 1.5;
+}
+
+#toast-container > div {
+  padding: 12px;
+  border-radius: 2px;
+  box-shadow: 0 5px 13px -7px rgba(0, 0, 0, 0.2);
+}
+
+#toast-container > div:hover {
+  box-shadow: 0 5px 13px -7px rgba(0, 0, 0, 0.2);
+}
+
+.toast-title {
+  color: #FFEB3B;
+  font-weight: normal;
+}
+
+.toast-close-button {
+  top: -7px;
+  right: -2px;
+}
+
+.toast-info {
+  background-color: #272727;
 }

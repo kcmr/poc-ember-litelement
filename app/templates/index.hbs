@@ -1,6 +1,6 @@
 <div class="main two-columns">
   <div class="form">
-    <h2>Data binding</h2>
+    <h2 class="heading">Data binding <span>(primitive types)</span></h2>
 
     {{form-property-field
       label="Vip"
@@ -54,16 +54,18 @@
 
   <div class="result">
     <h2>LitElement</h2>
-    <sample-lit-element
-      class="contact-card"
-      vip={{vip}}
-      name={{name}}
-      email={{email}}
-      avatar={{avatar}}
-      phone={{phone}}
-      phone-visibility-duration={{phoneVisibilityDuration}}
-      cats={{cats}}
-    >
-    </sample-lit-element>
+    {{#element-wrapper on-phone-shown=logSomething}}
+      <sample-lit-element
+        class="contact-card"
+        vip={{vip}}
+        name={{name}}
+        email={{email}}
+        avatar={{avatar}}
+        phone={{phone}}
+        phone-visibility-duration={{phoneVisibilityDuration}}
+        cats={{cats}}
+      >
+      </sample-lit-element>
+    {{/element-wrapper}}
   </div>
 </div>
