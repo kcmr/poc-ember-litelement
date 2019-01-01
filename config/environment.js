@@ -44,7 +44,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.rootURL = 'https://kcmr.github.io/poc-ember-litelement/';
+    ENV.rootURL = '/poc-ember-litelement/';
   }
 
   return ENV;
