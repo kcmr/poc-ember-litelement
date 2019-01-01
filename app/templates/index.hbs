@@ -1,54 +1,55 @@
 <div class="main two-columns">
   <div class="form">
     <h2>Data binding</h2>
-    <div class="field">
-      <label class="inline">
-        {{input type="checkbox" checked=vip}}
-        <span class="label">Vip {{code-property "vip"}}</span>
-      </label>
-    </div>
 
-    <div class="field">
-      <label>
-        <span class="label">Name {{code-property "name"}}</span>
-        {{input type="text" value=name}}
-      </label>
-    </div>
+    {{form-property-field
+      label="Vip"
+      name="vip"
+      type="checkbox"
+      value=vip
+    }}
 
-    <div class="field">
-      <label>
-        <span class="label">Email {{code-property "email"}}</span>
-        {{input type="text" value=email}}
-      </label>
-    </div>
+    {{form-property-field
+      label="Name"
+      name="name"
+      value=name
+    }}
 
-    <div class="field">
-      <label>
-        <span class="label">Avatar size (Ember) {{code-property "avatarSize"}}</span>
-        {{input type="number" step="10" value=avatarSize}}
-      </label>
-    </div>
+    {{form-property-field
+      label="Email"
+      name="email"
+      value=email
+    }}
 
-    <div class="field">
-      <label>
-        <span class="label">Avatar (computed) {{code-property "avatar"}}</span>
-        {{input type="text" readonly="readonly" disabled="disabled" value=avatar}}
-      </label>
-    </div>
+    {{form-property-field
+      label="Avatar size (Ember)"
+      name="avatarSize"
+      type="number"
+      step="10"
+      value=avatarSize
+    }}
 
-    <div class="field">
-      <label>
-        <span class="label">Phone {{code-property "phone"}}</span>
-        {{input type="text" value=phone}}
-      </label>
-    </div>
+    {{form-property-field
+      label="Avatar (computed from avatarSize)"
+      name="avatar"
+      readonly="readonly"
+      disabled="disabled"
+      value=avatar
+    }}
 
-    <div class="field">
-      <label>
-        <span class="label">Phone visibility duration {{code-property "phoneVisibilityDuration"}}</span>
-        {{input type="number" step="100" value=phoneVisibilityDuration}}
-      </label>
-    </div>
+    {{form-property-field
+      label="Phone"
+      name="phone"
+      value=phone
+    }}
+
+    {{form-property-field
+      label="Phone visibility duration"
+      name="phoneVisibilityDuration"
+      type="number"
+      step="100"
+      value=phoneVisibilityDuration
+    }}
   </div>
 
   <div class="result">
