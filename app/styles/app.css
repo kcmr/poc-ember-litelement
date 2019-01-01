@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: auto;
+}
+
+.contact-card {
+  width: 300px;
+  margin: 20px auto;
+}
