@@ -8,13 +8,33 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
+    this._setChild();
+    this._setListeners();
+    this._bindListeners();
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+
+    this._unbindListeners();
+  },
+
+  _setChild() {
     const child = this.element.querySelector('*');
+    this.set('child', child);
+  },
+
+  _setListeners() {
     const listeners = Object.entries(this.attrs)
       .filter(([key]) => key.startsWith('on-'))
       .map(([key, value]) => [key.replace('on-', ''), value]);
 
     this.set('listeners', listeners);
-    this.set('child', child);
+  },
+
+  _bindListeners() {
+    const listeners = this.get('listeners');
+    const child = this.get('child');
 
     if (listeners.length && child) {
       listeners.forEach((listener) => {
@@ -24,9 +44,7 @@ export default Component.extend({
     }
   },
 
-  willDestroyElement() {
-    this._super(...arguments);
-
+  _unbindListeners() {
     const listeners = this.get('listeners');
     const child = this.get('child');
 
