@@ -30,7 +30,7 @@ export default Controller.extend({
 
   toast: service('toast'),
 
-  logSomething(event) {
+  showToast(event) {
     const { type, detail } = event;
     const toast = this.get('toast');
     const options = {
