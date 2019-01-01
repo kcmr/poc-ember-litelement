@@ -11,6 +11,10 @@ body {
   box-sizing: inherit;
 }
 
+input[disabled] {
+  opacity: 0.7;
+}
+
 .wrapper {
   max-width: 800px;
   margin: auto;

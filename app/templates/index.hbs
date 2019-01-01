@@ -24,8 +24,15 @@
 
     <div class="field">
       <label>
-        <span class="label">Avatar {{code-property "avatar"}}</span>
-        {{input type="text" value=avatar}}
+        <span class="label">Avatar size (Ember) {{code-property "avatarSize"}}</span>
+        {{input type="number" step="10" value=avatarSize}}
+      </label>
+    </div>
+
+    <div class="field">
+      <label>
+        <span class="label">Avatar (computed) {{code-property "avatar"}}</span>
+        {{input type="text" readonly="readonly" disabled="disabled" value=avatar}}
       </label>
     </div>
 
