@@ -1,11 +1,54 @@
-<div class="main">
+<div class="main two-columns">
   <div class="form">
+    <h2>Data binding</h2>
+    <div class="field">
+      <label class="inline">
+        {{input type="checkbox" checked=vip}}
+        <span class="label">Vip <code>\{{vip}}</code></span>
+      </label>
+    </div>
 
+    <div class="field">
+      <label>
+        <span class="label">Name <code>\{{name}}</code></span>
+        {{input type="text" value=name}}
+      </label>
+    </div>
+
+    <div class="field">
+      <label>
+        <span class="label">Email <code>\{{email}}</code></span>
+        {{input type="text" value=email}}
+      </label>
+    </div>
+
+    <div class="field">
+      <label>
+        <span class="label">Avatar <code>\{{avatar}}</code></span>
+        {{input type="text" value=avatar}}
+      </label>
+    </div>
+
+    <div class="field">
+      <label>
+        <span class="label">Phone <code>\{{phone}}</code></span>
+        {{input type="text" value=phone}}
+      </label>
+    </div>
+
+    <div class="field">
+      <label>
+        <span class="label">Phone visibility duration <code>\{{phoneVisibilityDuration}}</code></span>
+        {{input type="number" step="100" value=phoneVisibilityDuration}}
+      </label>
+    </div>
   </div>
+
   <div class="result">
+    <h2>LitElement</h2>
     <sample-lit-element
       class="contact-card"
-      vip={{isVip}}
+      vip={{vip}}
       name={{name}}
       email={{email}}
       avatar={{avatar}}

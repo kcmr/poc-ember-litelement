@@ -2,6 +2,13 @@ body {
   margin: 0;
   background-color: #f0f0f0;
   font-family: sans-serif;
+  font-size: 15px;
+  color: #121212;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
 }
 
 .wrapper {
@@ -11,5 +18,51 @@ body {
 
 .contact-card {
   width: 300px;
-  margin: 20px auto;
+}
+
+/* form with two columns in index.hbs */
+.two-columns {
+  display: flex;
+  align-items: flex-start;
+}
+
+.form {
+  flex: 1;
+}
+
+.result {
+  padding-left: 40px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field .label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.field .inline {
+  display: flex;
+  align-items: center;
+}
+
+.field .inline input {
+  margin-right: 10px;
+}
+
+.field .inline .label {
+  margin-bottom: 0;
+}
+
+.field input:not([type="checkbox"]) {
+  font: inherit;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.label code {
+  color: #929292;
 }
