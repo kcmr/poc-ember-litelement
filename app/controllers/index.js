@@ -1,6 +1,7 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 import { inject as service } from '@ember/service';
+import { A } from '@ember/array';
 import '@kuscamara/sample-lit-element'
 
 export default Controller.extend({
@@ -14,11 +15,7 @@ export default Controller.extend({
 
   phoneVisibilityDuration: 1000,
 
-  cats: [
-    'Miau',
-    'Meow',
-    'Meee'
-  ],
+  cats: null,
 
   avatarSrc: 'https://api.adorable.io/avatars/',
 
@@ -40,6 +37,12 @@ export default Controller.extend({
 
   toast: service('toast'),
 
+  init() {
+    this._super(...arguments);
+
+    this.set('cats', A(['Miau', 'Meow', 'Meee']));
+  },
+
   showToast(event) {
     const { type, detail } = event;
     const toast = this.get('toast');
@@ -50,5 +53,11 @@ export default Controller.extend({
     };
 
     toast.info(`Detail: ${detail}`, `Event: ${type}`, options);
+  },
+
+  actions: {
+    updateCats() {
+      this.set('cats', [...this.cats]);
+    }
   }
 });

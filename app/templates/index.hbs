@@ -2,6 +2,17 @@
   <div class="form">
     <h2 class="heading">Data binding <span>(primitive types)</span></h2>
 
+    <fieldset>
+      <legend>Cats</legend>
+      {{#each cats as |cat index|}}
+        {{form-property-field
+          label=(concat "Cat " index)
+          value=(mut (get cats index))
+          change=(action "updateCats")
+        }}
+      {{/each}}
+    </fieldset>
+
     {{form-property-field
       label="Vip"
       name="vip"
