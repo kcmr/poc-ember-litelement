@@ -22,10 +22,20 @@ export default Controller.extend({
 
   avatarSrc: 'https://api.adorable.io/avatars/',
 
+  avatarImage: 'random-0.png',
+
   avatarSize: 100,
 
-  avatar: computed('avatarSrc', 'avatarSize', function() {
-    return `${this.avatarSrc}${this.avatarSize}/random-0.png`;
+  avatar: computed('avatarSrc', 'avatarSize', 'avatarImage', {
+    get(key) {
+      return `${this.avatarSrc}${this.avatarSize}/${this.avatarImage}`;
+    },
+    set(key, value) {
+      const [size, image] = value.split(this.avatarSrc)[1].split('/');
+      this.set('avatarImage', image);
+      this.set('avatarSize', size);
+      return value;
+    }
   }),
 
   toast: service('toast'),
