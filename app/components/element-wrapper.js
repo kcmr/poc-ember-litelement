@@ -10,13 +10,13 @@ export default Component.extend({
 
     this._setChild();
     this._setListeners();
-    this._bindListeners();
+    this._setEventHandlers('add');
   },
 
   willDestroyElement() {
     this._super(...arguments);
 
-    this._unbindListeners();
+    this._setEventHandlers('remove');
   },
 
   _setChild() {
@@ -27,31 +27,22 @@ export default Component.extend({
   _setListeners() {
     const listeners = Object.entries(this.attrs)
       .filter(([key]) => key.startsWith('on-'))
-      .map(([key, value]) => [key.replace('on-', ''), value]);
+      .map(([key, value]) => [
+        key.replace('on-', ''),
+        value.value.bind(this)
+      ]);
 
     this.set('listeners', listeners);
   },
 
-  _bindListeners() {
+  _setEventHandlers(method = 'add') {
     const listeners = this.listeners;
     const child = this.child;
 
     if (listeners.length && child) {
       listeners.forEach((listener) => {
         const [eventName, handler] = listener;
-        child.addEventListener(eventName, handler.value.bind(this));
-      });
-    }
-  },
-
-  _unbindListeners() {
-    const listeners = this.listeners;
-    const child = this.child;
-
-    if (listeners.length && child) {
-      listeners.forEach((listener) => {
-        const [eventName] = listener;
-        child.removeEventListener(eventName);
+        child[`${method}EventListener`](eventName, handler);
       });
     }
   }
