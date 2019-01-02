@@ -33,8 +33,8 @@ export default Component.extend({
   },
 
   _bindListeners() {
-    const listeners = this.get('listeners');
-    const child = this.get('child');
+    const listeners = this.listeners;
+    const child = this.child;
 
     if (listeners.length && child) {
       listeners.forEach((listener) => {
@@ -45,8 +45,8 @@ export default Component.extend({
   },
 
   _unbindListeners() {
-    const listeners = this.get('listeners');
-    const child = this.get('child');
+    const listeners = this.listeners;
+    const child = this.child;
 
     if (listeners.length && child) {
       listeners.forEach((listener) => {
