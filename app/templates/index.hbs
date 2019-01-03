@@ -1,69 +1,8 @@
-<div class="main two-columns">
-  <div class="form">
-    <h2 class="heading">Data binding <span>(primitive types)</span></h2>
-
-    <fieldset>
-      <legend>Cats</legend>
-      {{#each cats as |cat index|}}
-        {{form-property-field
-          label=(concat "Cat " index)
-          value=(mut (get cats index))
-          change=(action "updateCats")
-        }}
-      {{/each}}
-    </fieldset>
-
-    {{form-property-field
-      label="Vip"
-      name="vip"
-      type="checkbox"
-      value=vip
-    }}
-
-    {{form-property-field
-      label="Name"
-      name="name"
-      value=name
-    }}
-
-    {{form-property-field
-      label="Email"
-      name="email"
-      value=email
-    }}
-
-    {{form-property-field
-      label="Avatar size (Ember)"
-      name="avatarSize"
-      type="number"
-      step="10"
-      value=avatarSize
-    }}
-
-    {{form-property-field
-      label="Avatar (computed)"
-      name="avatar"
-      value=avatar
-    }}
-
-    {{form-property-field
-      label="Phone"
-      name="phone"
-      value=phone
-    }}
-
-    {{form-property-field
-      label="Phone visibility duration"
-      name="phoneVisibilityDuration"
-      type="number"
-      step="100"
-      value=phoneVisibilityDuration
-    }}
-  </div>
-
+<div class="two-columns">
   <div class="result">
     <h2>LitElement</h2>
-    {{#element-wrapper on-phone-shown=showToast}}
+    <p class="label"><code>&lt;sample-lit-element&gt;</code></p>
+    {{#element-event-listener on-phone-shown=showToast}}
       <sample-lit-element
         class="contact-card"
         vip={{vip}}
@@ -75,6 +14,69 @@
         cats={{cats}}
       >
       </sample-lit-element>
-    {{/element-wrapper}}
+    {{/element-event-listener}}
+  </div>
+
+  <div class="form">
+    <fieldset>
+      <legend>Data binding (primitives)</legend>
+
+      {{form-property-field
+        label="Name"
+        value=name
+      }}
+
+      {{form-property-field
+        label="Email"
+        value=email
+      }}
+
+      {{form-property-field
+        label="Avatar size"
+        type="number"
+        step="10"
+        value=avatarSize
+      }}
+
+      {{form-property-field
+        label="Avatar (computed)"
+        value=avatar
+      }}
+
+      {{form-property-field
+        label="Phone"
+        value=phone
+      }}
+
+      {{form-property-field
+        label="Phone visibility duration"
+        type="number"
+        step="100"
+        value=phoneVisibilityDuration
+      }}
+
+      {{form-property-field
+        label="Vip"
+        type="checkbox"
+        value=vip
+      }}
+    </fieldset>
+
+    <fieldset>
+      <legend>Data binding (array)</legend>
+      {{#each cats as |cat index|}}
+        {{form-property-field
+          label=(concat "Cat " index)
+          value=(mut (get cats index))
+          change=(action "updateCats")
+        }}
+      {{/each}}
+
+      {{!-- <ul>
+      {{#each cats as |cat index|}}
+        <li>{{get cats index}}</li>
+      {{/each}}
+      </ul> --}}
+    </fieldset>
   </div>
 </div>

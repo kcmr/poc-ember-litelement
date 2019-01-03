@@ -1,6 +1,11 @@
+html {
+  --accent-color: #3F51B5;
+  --body-bg-color: #EDEEF2;
+}
+
 body {
   margin: 0;
-  background-color: #f0f0f0;
+  background-color: var(--body-bg-color);
   font-family: sans-serif;
   font-size: 15px;
   color: #121212;
@@ -15,9 +20,72 @@ input[disabled] {
   opacity: 0.7;
 }
 
+a {
+  color: var(--accent-color);
+}
+
+pre, code {
+  font-family: menlo, monospace;
+}
+
+/**
+ * headings
+ */
+h2 {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+/**
+ * layout
+ */
+.outer-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .wrapper {
-  max-width: 800px;
-  margin: auto;
+  display: flex;
+  flex: 1;
+}
+
+.navigation {
+  width: 300px;
+  background-color: white;
+  border-right: 1px solid #D6DAF2;
+  flex-shrink: 0;
+}
+
+.main {
+  flex: 1;
+  padding: 30px 60px;
+}
+
+/**
+ * navigation
+ */
+.navigation__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation__list a {
+  display: block;
+  padding: 16px 20px;
+  line-height: 24px;
+  border-bottom: 1px solid #D6DAF2;
+  text-decoration: none;
+}
+
+.navigation__list a:not(.active):hover {
+  background-color: var(--body-bg-color);
+}
+
+.navigation__list .active {
+  background-color: var(--accent-color);
+  color: white;
 }
 
 .heading > span {
@@ -36,21 +104,45 @@ input[disabled] {
   align-items: flex-start;
 }
 
-.form {
-  flex: 1;
+.two-columns > div:not(:last-child) {
+  margin-right: 60px;
 }
 
-.result {
-  padding-left: 40px;
+.form {
+  flex: 1;
+  display: flex;
+}
+
+.form label {
+  display: block;
+  width: 300px;
+}
+
+.form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form fieldset:not(:last-of-type) {
+  margin-right: 60px;
+}
+
+.form legend {
+  padding: 0;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .field {
   margin-bottom: 20px;
 }
 
-.field .label {
+.label {
   display: block;
-  margin-bottom: 4px;
+  line-height: 24px;
+  margin: 0 0 2px;
 }
 
 .field .inline {
@@ -67,10 +159,17 @@ input[disabled] {
 }
 
 .field input:not([type="checkbox"]) {
-  font: inherit;
-  padding: 5px;
+  font-family: menlo;
+  font-size: 14px;
+  padding: 10px;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #d8d9e0;
+  color: #464646;
+}
+
+.field input:not([type="checkbox"]):focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 
 .label code {

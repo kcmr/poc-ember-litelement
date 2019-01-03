@@ -1,7 +1,17 @@
 <label class={{if _isStacked "" "inline"}}>
   {{#if _isStacked}}
     <span class="label">{{label}} {{code-property name}}</span>
-    {{input type=type step=step readonly=readonly disabled=disabled value=value}}
+    {{input
+      type=type
+      step=step
+      readonly=readonly
+      disabled=disabled
+      value=value
+      autocomplete="off"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck=false
+    }}
   {{else}}
     {{input type=type checked=value}}
     <span class="label">{{label}} {{code-property name}}</span>

@@ -19,7 +19,7 @@ export default Controller.extend({
 
   avatarSrc: 'https://api.adorable.io/avatars/',
 
-  avatarImage: 'random-0.png',
+  avatarImage: 'random-3.png',
 
   avatarSize: 100,
 
@@ -47,7 +47,7 @@ export default Controller.extend({
     const { type, detail } = event;
     const toast = this.get('toast');
     const options = {
-      positionClass: 'toast-bottom-left',
+      positionClass: 'toast-bottom-right',
       progressBar: false,
       closeButton: false
     };
