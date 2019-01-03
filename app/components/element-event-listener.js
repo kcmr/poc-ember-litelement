@@ -20,8 +20,7 @@ export default Component.extend({
   },
 
   _setChild() {
-    const child = this.element.querySelector('*');
-    this.set('child', child);
+    this.set('child', this.element.querySelector('*'));
   },
 
   _setListeners() {
