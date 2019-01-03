@@ -64,19 +64,12 @@
 
     <fieldset>
       <legend>Data binding (array)</legend>
-      {{#each cats as |cat index|}}
+      {{#each model as |cat index|}}
         {{form-property-field
           label=(concat "Cat " index)
-          value=(mut (get cats index))
-          change=(action "updateCats")
+          value=cat.name
         }}
       {{/each}}
-
-      {{!-- <ul>
-      {{#each cats as |cat index|}}
-        <li>{{get cats index}}</li>
-      {{/each}}
-      </ul> --}}
     </fieldset>
   </div>
 </div>

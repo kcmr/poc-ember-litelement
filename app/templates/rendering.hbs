@@ -1,0 +1,32 @@
+<div class="two-columns">
+  <div class="col flex-1">
+    <h2>Edit (model)</h2>
+    <ul>
+      {{#each model as |cat|}}
+        <li>
+          <div class="field">
+            {{input value=cat.name}}
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="col flex-1">
+    <h2>Render (model)</h2>
+    <ul>
+      {{#each model as |cat|}}
+        <li>{{cat.name}}</li>
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="col flex-1">
+    <h2>Render (computedCats)</h2>
+    <ul>
+      {{#each computedCats as |cat|}}
+        <li>{{cat}}</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

@@ -37,6 +37,13 @@ h2 {
 }
 
 /**
+ * util classes
+ */
+.flex-1 {
+  flex: 1;
+}
+
+/**
  * layout
  */
 .outer-wrapper {
