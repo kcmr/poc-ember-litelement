@@ -1,7 +1,10 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
+import template from './template';
 
 export default Component.extend({
+  layout: template,
+
   classNames: ['field'],
 
   type: 'text',
