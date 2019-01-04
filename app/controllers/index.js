@@ -14,9 +14,8 @@ export default Controller.extend({
 
   phoneVisibilityDuration: 1000,
 
-  cats: computed('model.@each.name', function() {
-    const cats = this.get('model');
-    return cats.map(cat => cat.name);
+  catNames: computed('cats.@each.name', function() {
+    return this.get('cats').mapBy('name');
   }),
 
   avatarSrc: 'https://api.adorable.io/avatars/',

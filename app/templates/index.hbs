@@ -12,7 +12,7 @@
         avatar={{avatar}}
         phone={{phone}}
         phone-visibility-duration={{phoneVisibilityDuration}}
-        cats={{cats}}
+        cats={{catNames}}
       >
       </sample-lit-element>
     {{/element-event-listener}}
@@ -65,7 +65,7 @@
 
     <fieldset>
       <legend>Data binding (array)</legend>
-      {{#each model as |cat index|}}
+      {{#each cats as |cat index|}}
         {{form-property-field
           label=(concat "Cat " index)
           value=cat.name

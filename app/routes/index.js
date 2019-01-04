@@ -8,5 +8,9 @@ export default Route.extend({
       { name: 'Fufu' },
       { name: 'Lola' },
     ];
+  },
+
+  setupController(controller, model) {
+    controller.set('cats', model);
   }
 });
