@@ -36,7 +36,7 @@ export default Controller.extend({
     }
   }),
 
-  toast: service('toast'),
+  toast: service(),
 
   showToast(event) {
     const { type, detail } = event;
