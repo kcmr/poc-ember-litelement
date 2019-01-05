@@ -12,8 +12,7 @@
         avatar={{avatar}}
         phone={{phone}}
         phone-visibility-duration={{phoneVisibilityDuration}}
-        cats={{catNames}}
-      >
+        cats={{catNames}}>
       </sample-lit-element>
     {{/element-event-listener}}
   </div>
@@ -24,43 +23,36 @@
 
       {{form-property-field
         label="Name"
-        value=name
-      }}
+        value=name}}
 
       {{form-property-field
         label="Email"
-        value=email
-      }}
+        value=email}}
 
       {{form-property-field
         label="Avatar size"
         type="number"
         step="10"
-        value=avatarSize
-      }}
+        value=avatarSize}}
 
       {{form-property-field
         label="Avatar (computed)"
-        value=avatar
-      }}
+        value=avatar}}
 
       {{form-property-field
         label="Phone"
-        value=phone
-      }}
+        value=phone}}
 
       {{form-property-field
         label="Phone visibility duration"
         type="number"
         step="100"
-        value=phoneVisibilityDuration
-      }}
+        value=phoneVisibilityDuration}}
 
       {{form-property-field
         label="Vip"
         type="checkbox"
-        value=vip
-      }}
+        value=vip}}
     </fieldset>
 
     <fieldset>
@@ -68,8 +60,7 @@
       {{#each cats as |cat index|}}
         {{form-property-field
           label=(concat "Cat " index)
-          value=cat.name
-        }}
+          value=cat.name}}
       {{/each}}
     </fieldset>
   </div>
