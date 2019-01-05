@@ -23,6 +23,19 @@
 
   <div class="col flex-1">
     <h2>Render (computedCats)</h2>
+
+    {{editable-field
+      placeholder="Cat name"
+      buttonLabel="Add"
+      onButtonClick=(action "parentAction" "patatas")
+    }}
+
+    {{editable-field
+      placeholder="Cat name"
+      buttonLabel="Remove"
+      onButtonClick=(action "parentAction" "patatas")
+    }}
+
     <ul>
       {{#each computedCats as |cat|}}
         <li>{{cat}}</li>

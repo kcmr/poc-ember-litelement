@@ -1,5 +1,6 @@
 html {
   --accent-color: #3F51B5;
+  --accent-color-dark: #182da0;
   --body-bg-color: #EDEEF2;
 }
 
@@ -217,4 +218,33 @@ h2 {
 
 .toast-info {
   background-color: #272727;
+}
+
+/**
+ * editable-field
+ */
+.editable-field {
+  display: flex;
+}
+
+.editable-field:focus-within .editable-field__input {
+  border-color: var(--accent-color);
+}
+
+.editable-field__button {
+  font-family: menlo;
+  font-size: 14px;
+  background-color:var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0 12px;
+  min-width: 75px;
+}
+
+.editable-field__button:focus {
+  background-color: var(--accent-color-dark);
+}
+
+.editable-field__button:disabled {
+  opacity: 0.5;
 }
