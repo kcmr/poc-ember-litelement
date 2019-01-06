@@ -25,11 +25,11 @@ export default Component.extend({
 
   _isDisabled: empty('value'),
 
+  onButtonClick() {},
+
   actions: {
     _onButtonClick() {
-      if (this.onButtonClick) {
-        this.onButtonClick();
-      }
+      this.onButtonClick();
     },
 
     _onInputBlur() {

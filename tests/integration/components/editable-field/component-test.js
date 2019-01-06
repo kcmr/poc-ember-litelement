@@ -1,4 +1,5 @@
-import { module, test } from 'qunit';
+import { module } from 'qunit';
+import test from 'ember-sinon-qunit/test-support/test';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
@@ -23,6 +24,33 @@ module('Integration | Component | editable-field', function(hooks) {
     const button = find('button');
     assert.equal(button.textContent, "Any");
   });
+
+  test('Setting buttonTabindex sets the button tabindex', async function(assert) {
+    await render(hbs`{{editable-field}}`);
+    assert.notOk(find('button').hasAttribute('tabindex'), 'button does not have tabindex by default');
+
+    await render(hbs`{{editable-field buttonTabindex="-1"}}`);
+    assert.ok(find('button').getAttribute('tabindex'), '-1');
+  });
+
+  test('Setting buttonType sets the button type', async function(assert) {
+    await render(hbs`{{editable-field}}`);
+    assert.equal(find('button').getAttribute('type'), 'button', 'default button type is "button"');
+
+    await render(hbs`{{editable-field buttonType="submit"}}`);
+    assert.equal(find('button').getAttribute('type'), 'submit');
+  });
+
+  // What??
+  // Cómo se skipea un test?
+  // test('Setting "focusInput" to true focuses the input', async function(assert) {
+  //   await render(hbs`{{editable-field}}`);
+  //   const input = find('input');
+  //   const focusSpy = this.spy(input, 'focus');
+  //   this.set('focusInput', true);
+  //   console.log('focusSpy', focusSpy);
+  //   assert.ok(focusSpy.calledOnce);
+  // });
 
   test('Button is disabled when the input is empty', async function(assert) {
     await render(hbs`{{editable-field}}`);
