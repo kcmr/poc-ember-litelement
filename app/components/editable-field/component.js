@@ -23,13 +23,13 @@ export default Component.extend({
     }
   }),
 
-  onButtonClick() {},
-
   _isDisabled: empty('value'),
 
   actions: {
     _onButtonClick() {
-      this.onButtonClick();
+      if (this.onButtonClick) {
+        this.onButtonClick();
+      }
     },
 
     _onInputBlur() {
