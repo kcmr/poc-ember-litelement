@@ -2,12 +2,13 @@
   <div class="col flex-1">
     <h2>Edit (model)</h2>
 
-    {{editable-list
-      listButtonLabel="Remove"
-      addButtonLabel="Add"
-      addInputPlaceholder="New item"
-      items=model
-      textProperty="name"}}
+    <EditableList
+      @listButtonLabel="Remove"
+      @addButtonLabel="Add"
+      @addInputPlaceholder="New item"
+      @items={{model}}
+      @textProperty="name">
+    </EditableList>
   </div>
 
   <div class="col flex-1">

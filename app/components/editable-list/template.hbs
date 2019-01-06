@@ -1,23 +1,24 @@
 <form action="" class="editable-list__form">
-  {{editable-field
-    placeholder=addInputPlaceholder
-    value=item
-    buttonLabel=addButtonLabel
-    buttonType="submit"
-    focusInput=_focusInput
-    onButtonClick=(action "addItem" item)}}
+  <EditableField
+    @placeholder={{addInputPlaceholder}}
+    @value={{item}}
+    @buttonLabel={{addButtonLabel}}
+    @buttonType="submit"
+    @focusInput={{_focusInput}}
+    @onButtonClick={{action "addItem" item}}>
+  </EditableField>
 </form>
 
 <div class="editable-list__list">
   {{#each items as |item index|}}
-    {{#editable-field
-      placeholder=(get item textProperty)
-      value=(get item textProperty)
-      buttonTabindex=listButtonTabindex
-      onButtonClick=(action "removeItem" index)}}
+    <EditableField
+      @placeholder={{get item textProperty}}
+      @value={{get item textProperty}}
+      @buttonTabindex={{listButtonTabindex}}
+      @onButtonClick={{action "removeItem" index}}>
       <svg aria-label={{listButtonLabel}} id="i-trash" viewBox="0 0 32 32" width={{removeIconSize}} height={{removeIconSize}} fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
         <path d="M28 6 L6 6 8 30 24 30 26 6 4 6 M16 12 L16 24 M21 12 L20 24 M11 12 L12 24 M12 6 L13 2 19 2 20 6" />
       </svg>
-    {{/editable-field}}
+    </EditableField>
   {{/each}}
 </div>

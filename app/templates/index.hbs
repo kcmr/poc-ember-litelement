@@ -3,7 +3,7 @@
 
     <h2>LitElement</h2>
     <p class="label"><code>&lt;sample-lit-element&gt;</code></p>
-    {{#element-event-listener on-phone-shown=showToast}}
+    <ElementEventListener @on-phone-shown={{showToast}}>
       <sample-lit-element
         class="contact-card"
         vip={{vip}}
@@ -14,55 +14,63 @@
         phone-visibility-duration={{phoneVisibilityDuration}}
         cats={{catNames}}>
       </sample-lit-element>
-    {{/element-event-listener}}
+    </ElementEventListener>
   </div>
 
   <div class="form">
     <fieldset>
       <legend>Data binding (primitives)</legend>
 
-      {{form-property-field
-        label="Name"
-        value=name}}
+      <FormPropertyField
+        @label="Name"
+        @value={{name}}>
+      </FormPropertyField>
 
-      {{form-property-field
-        label="Email"
-        value=email}}
+      <FormPropertyField
+        @label="Email"
+        @value={{email}}>
+      </FormPropertyField>
 
-      {{form-property-field
-        label="Avatar size"
-        type="number"
-        step="10"
-        value=avatarSize}}
+      <FormPropertyField
+        @label="Avatar size"
+        @type="number"
+        @step="10"
+        @value={{avatarSize}}>
+      </FormPropertyField>
 
-      {{form-property-field
-        label="Avatar (computed)"
-        value=avatar}}
+      <FormPropertyField
+        @label="Avatar (computed)"
+        @value={{avatar}}>
+      </FormPropertyField>
 
-      {{form-property-field
-        label="Phone"
-        value=phone}}
+      <FormPropertyField
+        @label="Phone"
+        @value={{phone}}>
+      </FormPropertyField>
 
-      {{form-property-field
-        label="Phone visibility duration"
-        type="number"
-        step="100"
-        value=phoneVisibilityDuration}}
+      <FormPropertyField
+        @label="Phone visibility duration"
+        @type="number"
+        @step="10"
+        @value={{phoneVisibilityDuration}}>
+      </FormPropertyField>
 
-      {{form-property-field
-        label="Vip"
-        type="checkbox"
-        value=vip}}
+      <FormPropertyField
+        @label="Vip"
+        @type="checkbox"
+        @value={{vip}}>
+      </FormPropertyField>
     </fieldset>
 
     <fieldset>
       <legend>Data binding (array)</legend>
-      {{editable-list
-        listButtonLabel="Remove"
-        addButtonLabel="Add"
-        addInputPlaceholder="New cat"
-        items=cats
-        textProperty="name"}}
+      <EditableList
+        @listButtonLabel="Remove"
+        @addButtonLabel="Add"
+        @addInputPlaceholder="New cat"
+        @items={{cats}}
+        @textProperty="name">
+      </EditableList>
     </fieldset>
   </div>
 </div>

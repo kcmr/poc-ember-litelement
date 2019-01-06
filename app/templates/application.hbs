@@ -1,7 +1,10 @@
 <div class="outer-wrapper">
   <div class="wrapper">
     <div class="navigation">
-      {{site-navigation tagName="ul" class="navigation__list"}}
+      <SiteNavigation
+        class="navigation__list"
+        @tagName="ul">
+      </SiteNavigation>
     </div>
 
     <div class="main">
