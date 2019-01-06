@@ -260,3 +260,27 @@ h2 {
 .editable-list__list .editable-field {
   margin-bottom: 2px;
 }
+
+.editable-list__list .editable-field {
+  position: relative;
+}
+
+.editable-list__list .editable-field__input {
+  padding-right: 42px;
+}
+
+.editable-list__list .editable-field__button {
+  opacity: 0;
+  min-width: 0;
+  background-color: transparent;
+  color: currentColor;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.editable-list__list .editable-field:focus-within .editable-field__button,
+.editable-list__list .editable-field:hover .editable-field__button {
+  opacity: 1;
+}

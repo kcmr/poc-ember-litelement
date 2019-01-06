@@ -6,7 +6,9 @@ export default Component.extend({
   listButtonLabel: '',
   listButtonTabindex: -1,
   addButtonLabel: '',
+  addInputPlaceholder: '',
   textProperty: '',
+  removeIconSize: 18,
   _focusInput: false,
   actions: {
     removeItem(index) {
