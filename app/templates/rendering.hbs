@@ -1,15 +1,11 @@
 <div class="two-columns">
   <div class="col flex-1">
     <h2>Edit (model)</h2>
-    <ul>
-      {{#each model as |cat|}}
-        <li>
-          <div class="field">
-            {{input value=cat.name}}
-          </div>
-        </li>
-      {{/each}}
-    </ul>
+
+    {{editable-list
+      listButtonLabel="Remove"
+      addButtonLabel="Add"
+      items=model}}
   </div>
 
   <div class="col flex-1">
@@ -23,17 +19,6 @@
 
   <div class="col flex-1">
     <h2>Render (computedCats)</h2>
-
-    {{editable-field
-      placeholder="Cat name"
-      buttonLabel="Add"
-      onButtonClick=(action "parentAction" "patatas")}}
-
-    {{editable-field
-      placeholder="Cat name"
-      buttonLabel="Remove"
-      onButtonClick=(action "parentAction" "patatas")}}
-
     <ul>
       {{#each computedCats as |cat|}}
         <li>{{cat}}</li>

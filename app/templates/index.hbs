@@ -57,11 +57,10 @@
 
     <fieldset>
       <legend>Data binding (array)</legend>
-      {{#each cats as |cat index|}}
-        {{form-property-field
-          label=(concat "Cat " index)
-          value=cat.name}}
-      {{/each}}
+      {{editable-list
+        listButtonLabel="Remove"
+        addButtonLabel="Add"
+        items=cats}}
     </fieldset>
   </div>
 </div>

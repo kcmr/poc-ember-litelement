@@ -1,14 +1,16 @@
-<div class="field editable-field">
-  {{input
-    class="editable-field__input"
-    type="text"
-    value=value
-    placeholder=placeholder}}
+{{input
+  autocomplete="off"
+  class="editable-field__input"
+  type="text"
+  value=value
+  placeholder=placeholder
+  focus-out=(action "_onInputBlur")}}
 
-  <button
-    class="editable-field__button"
-    disabled={{_isDisabled}}
-    onclick={{action "_onButtonClick"}}>
-    {{buttonLabel}}
-  </button>
-</div>
+<button
+  class="editable-field__button"
+  disabled={{_isDisabled}}
+  tabindex={{buttonTabindex}}
+  type={{buttonType}}
+  onclick={{action "_onButtonClick"}}>
+  {{~buttonLabel~}}
+</button>

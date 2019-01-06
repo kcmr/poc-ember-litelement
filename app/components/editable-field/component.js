@@ -1,8 +1,9 @@
 import Component from '@ember/component';
+import { computed, observer } from '@ember/object';
 import { empty } from '@ember/object/computed';
 
 export default Component.extend({
-  tagName: '',
+  classNames: ['field', 'editable-field'],
 
   buttonLabel: '',
 
@@ -10,11 +11,29 @@ export default Component.extend({
 
   value: '',
 
+  buttonTabindex: null,
+
+  buttonType: 'button',
+
+  focusInput: false,
+
+  _focusInputChanged: observer('focusInput', function() {
+    if (this.focusInput) {
+      this.element.querySelector('input').focus();
+    }
+  }),
+
+  onButtonClick() {},
+
   _isDisabled: empty('value'),
 
   actions: {
     _onButtonClick() {
       this.onButtonClick();
+    },
+
+    _onInputBlur() {
+      this.set('focusInput', false);
     }
   }
 });

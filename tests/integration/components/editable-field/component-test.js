@@ -21,7 +21,7 @@ module('Integration | Component | editable-field', function(hooks) {
   test('Setting buttonLabel sets the button text', async function(assert) {
     await render(hbs`{{editable-field buttonLabel="Any"}}`);
     const button = find('button');
-    assert.equal(button.textContent.trim(), "Any");
+    assert.equal(button.textContent, "Any");
   });
 
   test('Button is disabled when the input is empty', async function(assert) {
