@@ -1,7 +1,7 @@
 {{#each items as |item index|}}
   {{editable-field
-    placeholder=item.name
-    value=item.name
+    placeholder=(get item textProperty)
+    value=(get item textProperty)
     buttonLabel=listButtonLabel
     buttonTabindex=listButtonTabindex
     onButtonClick=(action "removeItem" index)}}

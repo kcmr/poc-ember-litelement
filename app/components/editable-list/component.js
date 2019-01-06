@@ -5,6 +5,7 @@ export default Component.extend({
   listButtonLabel: '',
   listButtonTabindex: -1,
   addButtonLabel: '',
+  textProperty: '',
   _focusInput: false,
   actions: {
     removeItem(index) {
