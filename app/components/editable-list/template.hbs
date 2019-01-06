@@ -1,13 +1,4 @@
-{{#each items as |item index|}}
-  {{editable-field
-    placeholder=(get item textProperty)
-    value=(get item textProperty)
-    buttonLabel=listButtonLabel
-    buttonTabindex=listButtonTabindex
-    onButtonClick=(action "removeItem" index)}}
-{{/each}}
-
-<form action="">
+<form action="" class="editable-list__form">
   {{editable-field
     placeholder=item
     value=item
@@ -16,3 +7,14 @@
     focusInput=_focusInput
     onButtonClick=(action "addItem" item)}}
 </form>
+
+<div class="editable-list__list">
+  {{#each items as |item index|}}
+    {{editable-field
+      placeholder=(get item textProperty)
+      value=(get item textProperty)
+      buttonLabel=listButtonLabel
+      buttonTabindex=listButtonTabindex
+      onButtonClick=(action "removeItem" index)}}
+  {{/each}}
+</div>

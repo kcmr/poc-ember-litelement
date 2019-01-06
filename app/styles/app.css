@@ -248,3 +248,15 @@ h2 {
 .editable-field__button:disabled {
   opacity: 0.5;
 }
+
+/**
+ * editable-list
+ */
+.form .editable-list {
+  width: 320px;
+  padding-top: 26px;
+}
+
+.editable-list__list .editable-field {
+  margin-bottom: 2px;
+}

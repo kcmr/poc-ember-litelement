@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 
 export default Component.extend({
+  classNames: ['editable-list'],
   items: null,
   listButtonLabel: '',
   listButtonTabindex: -1,
