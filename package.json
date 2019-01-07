@@ -36,6 +36,7 @@
     "ember-cli-template-lint": "^1.0.0-beta.1",
     "ember-cli-uglify": "^2.1.0",
     "ember-data": "~3.5.0",
+    "ember-engines": "^0.5.25",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
@@ -56,5 +57,10 @@
   },
   "dependencies": {
     "@kuscamara/sample-lit-element": "^1.0.7"
+  },
+  "ember-addon": {
+    "paths": [
+      "lib/playroom"
+    ]
   }
 }
