@@ -38,15 +38,19 @@ export default Controller.extend({
 
   toast: service(),
 
-  showToast(event) {
-    const { type, detail } = event;
-    const toast = this.get('toast');
-    const options = {
-      positionClass: 'toast-bottom-right',
-      progressBar: false,
-      closeButton: false
-    };
+  actions: {
+    showToast(event) {
+      const { type, detail } = event;
+      const toast = this.get('toast');
+      const options = {
+        positionClass: 'toast-bottom-right',
+        progressBar: false,
+        closeButton: false
+      };
 
-    toast.info(`Detail: ${detail}`, `Event: ${type}`, options);
+      this.set('avatarSize', 150);
+
+      toast.info(`Detail: ${detail}`, `Event: ${type}`, options);
+    }
   }
 });

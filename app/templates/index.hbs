@@ -3,7 +3,7 @@
 
     <h2>LitElement</h2>
     <p class="label"><code>&lt;sample-lit-element&gt;</code></p>
-    <ElementEventListener @on-phone-shown={{showToast}}>
+    <ElementEventListener @on-phone-shown={{action 'showToast'}}>
       <sample-lit-element
         class="contact-card"
         vip={{vip}}

@@ -26,10 +26,7 @@ export default Component.extend({
   _setListeners() {
     const listeners = Object.entries(this.attrs)
       .filter(([key]) => key.startsWith('on-'))
-      .map(([key, value]) => [
-        key.replace('on-', ''),
-        value.value.bind(this)
-      ]);
+      .map(([key, value]) => [key.replace('on-', ''), value]);
 
     this.set('listeners', listeners);
   },
