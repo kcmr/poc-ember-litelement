@@ -5,7 +5,10 @@
     "ember-engine"
   ],
   "dependencies": {
+    "babel-loader": "^8.0.6",
+    "ember-auto-import": "^1.4.0",
+    "ember-cli-babel": "*",
     "ember-cli-htmlbars": "*",
-    "ember-cli-babel": "*"
+    "lit-element": "^2.1.0"
   }
 }

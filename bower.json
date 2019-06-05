@@ -1,0 +1,12 @@
+{
+  "name": "poc-ember-litelement",
+  "description": "Small description for poc-ember-litelement goes here",
+  "main": "",
+  "authors": [
+    "Kus Cámara <kus.camara.next@bbva.com>"
+  ],
+  "ignore": [],
+  "dependencies": {
+    "paper-button": "^2.0.0"
+  }
+}

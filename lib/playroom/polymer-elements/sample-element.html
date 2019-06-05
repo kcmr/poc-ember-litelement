@@ -1,0 +1,32 @@
+<dom-module id="sample-element">
+  <script>
+    {
+      const { Element, html } = Polymer;
+
+      class SampleElement extends Element {
+        static get properties() {
+          return {
+            text: {
+              type: String,
+              value: 'helllooooo'
+            }
+          };
+        }
+
+        static get template() {
+          return html`
+            <style>
+              :host {
+                color: orange;
+              }
+            </style>
+
+            <p>[[text]]</p>
+          `;
+        }
+      }
+
+      customElements.define('sample-element', SampleElement);
+    }
+  </script>
+</dom-module>
