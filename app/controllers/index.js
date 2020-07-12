@@ -1,7 +1,12 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object';
 import { inject as service } from '@ember/service';
-import '@kuscamara/sample-lit-element'
+import '@kuscamara/sample-lit-element';
+import 'in-app-component';
+
+const refObject = {
+  foo: 'bar'
+};
 
 export default Controller.extend({
   vip: true,
@@ -23,6 +28,8 @@ export default Controller.extend({
   avatarImage: 'random-3.png',
 
   avatarSize: 100,
+
+  dummyObject: refObject,
 
   avatar: computed('avatarSrc', 'avatarSize', 'avatarImage', {
     get(key) {
@@ -51,6 +58,11 @@ export default Controller.extend({
       this.set('avatarSize', 150);
 
       toast.info(`Detail: ${detail}`, `Event: ${type}`, options);
+    },
+
+    anotherAction(event) {
+      refObject.foo = refObject.foo + '-aa';
+      console.log(event);
     }
   }
 });
