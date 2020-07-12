@@ -21,6 +21,7 @@
     "@ember/jquery": "^0.5.2",
     "@ember/optional-features": "^0.6.3",
     "broccoli-asset-rev": "^2.7.0",
+    "broccoli-merge-trees": "^4.2.0",
     "ember-ajax": "^3.1.0",
     "ember-auto-import": "^1.2.19",
     "ember-cli": "~3.5.0",
@@ -47,6 +48,7 @@
     "ember-toastr": "^1.7.2",
     "ember-welcome-page": "^3.2.0",
     "eslint-plugin-ember": "^5.2.0",
+    "in-app-component": "file:./components/in-app-component",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.8.0",
     "toastr": "^2.1.4"
@@ -55,6 +57,8 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
-    "@kuscamara/sample-lit-element": "^1.0.7"
+    "@kuscamara/sample-lit-element": "^1.0.7",
+    "broccoli-funnel": "^3.0.3",
+    "lit-element": "^2.3.1"
   }
 }
